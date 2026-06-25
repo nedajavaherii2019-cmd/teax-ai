@@ -3,112 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Teax AI</title>
-
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
-
 body{
-    background:#000000;
+    background: #080810;
+    background-image:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(80,40,160,0.35) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 80% 20%, rgba(30,80,200,0.18) 0%, transparent 60%);
     color:white;
     font-family:Tahoma,sans-serif;
-    height:100vh;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
 }
-
 .container{
     width:90%;
     max-width:1000px;
     text-align:center;
 }
-
 .logo{
-    position:absolute;
+    position:fixed;
     top:20px;
     right:25px;
+    z-index:10;
 }
-
 .logo img{
-    width:160px;
-    height:160px;
+    width:200px;
+    height:200px;
     object-fit:contain;
+    filter: drop-shadow(0 0 18px rgba(120,60,255,0.45));
+    border-radius: 18px;
 }
-
-.subtitle{
-    color:#b3b3b3;
-    margin-top:10px;
-    font-size:18px;
-}
-
 .main-title{
     font-size:52px;
     margin-bottom:40px;
+    line-height:1.5;
+    background: linear-gradient(120deg, #ffffff 40%, #b39ddb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
 }
-
 .message-box{
     width:100%;
-    background:#222;
-    border:1px solid #444;
+    background: linear-gradient(135deg, #16103a 60%, #1a1040 100%);
+    border: 1px solid rgba(120,80,255,0.35);
     border-radius:25px;
     padding:25px;
     font-size:22px;
-    color:#ddd;
+    color:#ccc;
     margin-bottom:30px;
+    box-shadow: 0 0 32px rgba(100,60,220,0.13), inset 0 1px 0 rgba(255,255,255,0.05);
 }
-
 .buttons{
     display:flex;
     justify-content:center;
     gap:20px;
 }
-
 .btn{
-    background:#1d1d1d;
+    background: linear-gradient(135deg, #1a1040 60%, #241560 100%);
     color:white;
     text-decoration:none;
-    border:1px solid #444;
-    padding:18px 30px;
+    border: 1px solid rgba(130,90,255,0.4);
+    padding:18px 36px;
     border-radius:20px;
     transition:.3s;
     font-size:20px;
+    box-shadow: 0 0 16px rgba(100,60,220,0.10);
 }
-
 .btn:hover{
-    background:#333;
+    background: linear-gradient(135deg, #2d1a6e 60%, #3a2090 100%);
+    border-color: rgba(160,120,255,0.7);
+    box-shadow: 0 0 28px rgba(120,80,255,0.3);
+    transform: translateY(-2px);
 }
 </style>
-
 </head>
-
 <body>
-
 <div class="logo">
     <img src="logo.jpeg" alt="Teax AI Logo">
 </div>
-
 <div class="container">
-
     <div class="main-title">
         من اینجام تا به شما جهانی جدید را نشان دهم
     </div>
-
     <div class="message-box">
         به دنیای Teax AI خوش آمدید
     </div>
-
     <div class="buttons">
         <a class="btn" href="#">🚀 فضا</a>
         <a class="btn" href="#">🔮 ماوراءالطبیعه</a>
     </div>
-
 </div>
-
 </body>
 </html>
