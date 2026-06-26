@@ -7,17 +7,150 @@
 <style>
 *{ margin:0; padding:0; box-sizing:border-box; }
 body{
-    min-height:100vh; color:white; font-family:Tahoma,sans-serif;
-    background: linear-gradient(rgba(5,8,25,.45),rgba(5,8,25,.55)),
-    url("../space.png") center/cover fixed no-repeat;
+    min-height:100vh;
+    color:white;
+    font-family:Tahoma,sans-serif;
+    background: #080818;
+    background-image:
+        url("../space.png"),
+        radial-gradient(ellipse 90% 60% at 50% 0%, rgba(40,20,120,0.7) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 80% 30%, rgba(20,60,180,0.35) 0%, transparent 60%);
+    background-size: cover, auto, auto;
+    background-position: center, center, center;
+    background-attachment: fixed, fixed, fixed;
+    background-repeat: no-repeat, no-repeat, no-repeat;
 }
-.logo{ position:fixed; top:20px; right:25px; z-index:10; }
-.logo img{ width:80px; height:80px; object-fit:contain;
-    filter:drop-shadow(0 0 18px rgba(120,60,255,0.45)); border-radius:18px; }
-.title{ position:absolute; top:55px; left:50%; transform:translateX(-50%);
-    font-size:45px; font-weight:bold;
+
+/* لوگو */
+.logo{
+    position:fixed;
+    top:20px;
+    right:25px;
+    z-index:10;
+}
+.logo img{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+    filter:drop-shadow(0 0 18px rgba(120,60,255,0.6));
+    border-radius:18px;
+}
+
+/* دکمه خروج */
+.exit-btn{
+    position:fixed;
+    top:28px;
+    left:28px;
+    z-index:10;
+    background:rgba(255,255,255,0.07);
+    border:1px solid rgba(180,140,255,0.35);
+    color:white;
+    font-family:Tahoma,sans-serif;
+    font-size:16px;
+    padding:12px 22px;
+    border-radius:15px;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-block;
+    backdrop-filter:blur(10px);
+    transition:.3s;
+}
+.exit-btn:hover{
+    background:rgba(120,80,255,0.2);
+    border-color:rgba(160,120,255,0.6);
+    box-shadow:0 0 20px rgba(120,80,255,0.3);
+}
+
+/* عنوان */
+.title{
+    position:fixed;
+    top:38px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:40px;
+    font-weight:bold;
+    white-space:nowrap;
     background:linear-gradient(120deg,#fff,#bba6ff);
-    -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-.article{ position:absolute; top:140px; right:70px; width:700px; height:760px;
-    padding:40px; overflow-y:auto; background:rgba(15,20,55,.35);
-    border:1px solid rgba(180,140,255,.25); border-radius:30px;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+}
+
+/* کادر شیشه‌ای */
+.article{
+    position:absolute;
+    top:130px;
+    right:70px;
+    width:700px;
+    max-height:calc(100vh - 160px);
+    padding:40px;
+    overflow-y:auto;
+    background:rgba(15,10,50,0.55);
+    border:1px solid rgba(180,140,255,0.3);
+    border-radius:30px;
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    box-shadow:0 0 60px rgba(100,70,220,0.3), inset 0 1px rgba(255,255,255,0.1);
+}
+.article::-webkit-scrollbar{ width:8px; }
+.article::-webkit-scrollbar-thumb{ background:#8060ff; border-radius:20px; }
+.article::-webkit-scrollbar-track{ background:rgba(255,255,255,0.05); border-radius:20px; }
+
+h1{ font-size:38px; margin-bottom:25px; }
+h2{
+    font-size:28px;
+    margin-top:35px;
+    margin-bottom:15px;
+    color:#c9b7ff;
+    border-bottom:1px solid rgba(255,255,255,0.2);
+    padding-bottom:10px;
+}
+p{
+    font-size:20px;
+    line-height:2.4;
+    text-align:justify;
+    color:#eeeeee;
+    margin-bottom:25px;
+}
+
+@media(max-width:1000px){
+    .article{
+        position:relative;
+        right:auto;
+        top:140px;
+        width:90%;
+        margin:0 auto 40px;
+        max-height:none;
+    }
+    .title{ font-size:28px; }
+    .exit-btn{ font-size:14px; padding:10px 16px; }
+}
+</style>
+</head>
+<body>
+
+<div class="logo">
+    <img src="../logo.jpeg" alt="Teax AI Logo">
+</div>
+
+<a class="exit-btn" href="../index.html">← خروج</a>
+
+<div class="title">خوش آمدید</div>
+
+<div class="article">
+    <h1>فضا چیست؟</h1>
+    <p>فضا یا کیهان به گستره عظیمی گفته می‌شود که شامل تمام ماده، انرژی، ستارگان، سیارات، کهکشان‌ها و ساختارهای بزرگ مقیاس جهان است. دانشمندان با مطالعه نور، امواج گرانشی و ذرات کیهانی تلاش می‌کنند تاریخچه و قوانین حاکم بر جهان را بهتر درک کنند.</p>
+    <h2>آغاز جهان</h2>
+    <p>بر اساس مدل استاندارد کیهان‌شناسی، جهان حدود ۱۳٫۸ میلیارد سال پیش از حالتی بسیار داغ و چگال آغاز شد. پس از گذشت زمان، ماده سردتر شد و نخستین ساختارهای کیهانی شکل گرفتند.</p>
+    <h2>کهکشان‌ها</h2>
+    <p>کهکشان‌ها مجموعه‌هایی عظیم از ستارگان، گاز و غبار هستند که توسط گرانش کنار هم نگه داشته شده‌اند. کهکشان راه شیری خانه منظومه شمسی ماست.</p>
+    <h2>ستارگان</h2>
+    <p>ستارگان کره‌های بسیار داغی از گاز هستند که انرژی خود را از واکنش‌های هسته‌ای تولید می‌کنند.</p>
+    <h2>سیاه‌چاله‌ها</h2>
+    <p>سیاه‌چاله‌ها مناطقی از فضا هستند که گرانش آن‌ها آن‌قدر زیاد است که حتی نور نمی‌تواند از آن‌ها فرار کند.</p>
+    <h2>آینده کاوش فضایی</h2>
+    <p>انسان با استفاده از تلسکوپ‌ها و فضاپیماها هر روز اطلاعات بیشتری درباره جهان به دست می‌آورد.</p>
+</div>
+
+</body>
+</html>
