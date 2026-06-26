@@ -34,8 +34,8 @@ body{
     z-index:10;
 }
 .logo img{
-    width:200px;
-    height:200px;
+    width:80px;
+    height:80px;
     object-fit:contain;
     filter: drop-shadow(0 0 18px rgba(120,60,255,0.45));
     border-radius: 18px;
@@ -48,7 +48,6 @@ body{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: none;
 }
 .message-box{
     width:100%;
@@ -97,9 +96,19 @@ body{
         به دنیای Teax AI خوش آمدید
     </div>
     <div class="buttons">
-        <a class="btn" href="#">🚀 فضا</a>
+        <a class="btn" href="space/">🚀 فضا</a>
         <a class="btn" href="#">🔮 ماوراءالطبیعه</a>
     </div>
 </div>
+
+<script>
+document.addEventListener('keydown', function(e) {
+    if (e.code === 'Space' || e.key === ' ') {
+        e.preventDefault();
+        window.location.href = 'space/';
+    }
+});
+</script>
+
 </body>
 </html>
