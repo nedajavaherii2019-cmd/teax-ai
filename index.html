@@ -73,8 +73,8 @@ body{
 .buttons{
     display:flex;
     justify-content:center;
-    gap:20px;
     flex-wrap:wrap;
+    gap:20px;
 }
 
 .btn{
@@ -97,6 +97,7 @@ body{
 }
 
 </style>
+
 </head>
 
 <body>
@@ -116,22 +117,30 @@ body{
     </div>
 
     <div class="buttons">
+
         <a class="btn" href="space/">🚀 فضا</a>
+
         <a class="btn" href="earth/">🌍 زمین و سنگ‌ها</a>
+
+        <a class="btn" href="nature/">🌿 طبیعت</a>
+
+        <a class="btn" href="oceans/">🌊 دریاها</a>
+
         <a class="btn" href="#">🔮 ماوراءالطبیعه</a>
+
     </div>
 
 </div>
 
 <script>
 
-document.addEventListener('keydown', function(e){
+document.addEventListener('keydown', function(e) {
 
-    if(e.code==='Space' || e.key===' '){
+    if (e.code === 'Space' || e.key === ' ') {
 
         e.preventDefault();
 
-        window.location.href='space/';
+        window.location.href = 'space/';
 
     }
 
