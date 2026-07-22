@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Teax AI | Supernatural</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:Tahoma,sans-serif;
+
+background:#090814;
+
+background-image:
+radial-gradient(circle at top,
+rgba(120,70,255,.25),
+transparent 60%),
+url("background.png");
+
+background-size:cover;
+
+background-position:center;
+
+background-attachment:fixed;
+
+color:white;
+
+}
+
+.logo{
+
+position:fixed;
+
+top:20px;
+
+right:25px;
+
+z-index:1000;
+
+}
+
+.logo img{
+
+width:80px;
+
+height:80px;
+
+border-radius:18px;
+
+filter:drop-shadow(0 0 18px rgba(120,60,255,.5));
+
+}
+
+.back{
+
+position:fixed;
+
+left:30px;
+
+top:30px;
+
+text-decoration:none;
+
+color:white;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+padding:14px 28px;
+
+border-radius:20px;
+
+border:1px solid rgba(170,120,255,.4);
+
+transition:.3s;
+
+font-size:18px;
+
+}
+
+.back:hover{
+
+background:rgba(140,90,255,.25);
+
+box-shadow:0 0 25px rgba(130,80,255,.35);
+
+}
+
+.container{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:150px 40px 80px;
+
+}
+
+.hero{
+
+background:rgba(20,18,50,.35);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+padding:40px;
+
+border:1px solid rgba(170,120,255,.25);
+
+box-shadow:0 0 40px rgba(100,60,220,.2);
+
+margin-bottom:40px;
+
+}
+
+.hero h1{
+
+font-size:55px;
+
+margin-bottom:20px;
+
+background:linear-gradient(120deg,#fff,#c2b0ff);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.hero p{
+
+font-size:22px;
+
+line-height:2;
+
+color:#ddd;
+
+}
+
+.article{
+
+background:rgba(22,18,55,.35);
+
+backdrop-filter:blur(18px);
+
+border-radius:25px;
+
+padding:35px;
+
+border:1px solid rgba(170,120,255,.2);
+
+margin-top:30px;
+
+}
+
+.article h2{
+
+font-size:34px;
+
+margin-bottom:20px;
+
+color:#ffffff;
+
+}
+
+.article p{
+
+font-size:21px;
+
+line-height:2.3;
+
+color:#ececec;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="logo">
+<img src="logo.jpeg">
+</div>
+
+<a href="../index.html" class="back">
+⬅ بازگشت
+</a>
+
+<div class="container">
+
+<div class="hero">
+
+<h1>
+🔮 دنیای ماوراءالطبیعه
+</h1>
+
+<p>
+
+در این بخش با مشهورترین رازهای جهان، افسانه‌ها، مکان‌های اسرارآمیز و پدیده‌هایی آشنا می‌شوید که سال‌ها ذهن انسان را به خود مشغول کرده‌اند. مطالب این بخش با نگاهی علمی و بی‌طرف نوشته شده‌اند تا هم روایت‌های مشهور را بشناسید و هم دیدگاه پژوهشگران را درباره آن‌ها بخوانید.
+
+</p>
+
+</div><!-- کارت های مقالات -->
+
+<div class="article">
+
+<h2>📚 مقالات منتخب</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:30px;">
+
+<div style="background:rgba(255,255,255,.05);backdrop-filter:blur(15px);padding:25px;border-radius:20px;border:1px solid rgba(170,120,255,.2);transition:.3s;cursor:pointer;">
+
+<h3 style="margin-bottom:15px;font-size:24px;">🔺 مثلث برمودا</h3>
+
+<p style="line-height:2;color:#dcdcdc;">
+رازآلودترین منطقه اقیانوس اطلس؛ افسانه یا واقعیت؟
+</p>
+
+</div>
+
+<div style="background:rgba(255,255,255,.05);backdrop-filter:blur(15px);padding:25px;border-radius:20px;border:1px solid rgba(170,120,255,.2);transition:.3s;cursor:pointer;">
+
+<h3 style="margin-bottom:15px;font-size:24px;">👻 ارواح</h3>
+
+<p style="line-height:2;color:#dcdcdc;">
+آیا وجود ارواح از نظر علم اثبات شده است؟
+</p>
+
+</div>
+
+<div style="background:rgba(255,255,255,.05);backdrop-filter:blur(15px);padding:25px;border-radius:20px;border:1px solid rgba(170,120,255,.2);transition:.3s;cursor:pointer;">
+
+<h3 style="margin-bottom:15px;font-size:24px;">👽 موجودات فرازمینی</h3>
+
+<p style="line-height:2;color:#dcdcdc;">
+آیا انسان در جهان تنهاست؟
+</p>
+
+</div>
+
+<div style="background:rgba(255,255,255,.05);backdrop-filter:blur(15px);padding:25px;border-radius:20px;border:1px solid rgba(170,120,255,.2);transition:.3s;cursor:pointer;">
+
+<h3 style="margin-bottom:15px;font-size:24px;">🏛 آتلانتیس</h3>
+
+<p style="line-height:2;color:#dcdcdc;">
+تمدن گمشده‌ای که هنوز درباره آن بحث می‌شود.
+</p>
+
+</div>
+
+<div style="background:rgba(255,255,255,.05);backdrop-filter:blur(15px);padding:25px;border-radius:20px;border:1px solid rgba(170,120,255,.2);transition:.3s;cursor:pointer;">
+
+<h3 style="margin-bottom:15px;font-size:24px;">🚢 کشتی هلندی سرگردان</h3>
+
+<p style="line-height:2;color:#dcdcdc;">
+افسانه‌ای که قرن‌ها میان دریانوردان نقل شده است.
+</p>
+
+</div>
+
+<div style="background:rgba(255,255,255,.05);backdrop-filter:blur(15px);padding:25px;border-radius:20px;border:1px solid rgba(170,120,255,.2);transition:.3s;cursor:pointer;">
+
+<h3 style="margin-bottom:15px;font-size:24px;">🔮 پیشگویی‌های نوستراداموس</h3>
+
+<p style="line-height:2;color:#dcdcdc;">
+واقعیت، برداشت شخصی یا اتفاقی؟
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="article">
+
+<h2>🔺 مثلث برمودا</h2>
+
+<p>
+
+مثلث برمودا منطقه‌ای فرضی در اقیانوس اطلس است که میان فلوریدا، برمودا و پورتوریکو قرار دارد. شهرت این منطقه به دلیل گزارش‌هایی درباره ناپدید شدن برخی کشتی‌ها و هواپیماها در دهه‌های گذشته است.
+
+برخی افراد این اتفاقات را به نیروهای ناشناخته، موجودات فرازمینی یا پدیده‌های ماورایی نسبت می‌دهند. اما بررسی‌های علمی تاکنون هیچ مدرک معتبری برای این ادعاها پیدا نکرده‌اند.
+
+کارشناسان معتقدند شرایط جوی، طوفان‌های ناگهانی، خطای انسانی، جریان‌های دریایی و حجم بالای رفت‌وآمد کشتی‌ها و هواپیماها می‌توانند علت بسیاری از این حوادث باشند.
+
+با این حال، مثلث برمودا همچنان یکی از مشهورترین رازهای جهان باقی مانده و الهام‌بخش کتاب‌ها، فیلم‌ها و مستندهای بسیاری بوده است.
+
+</p>
+
+</div><div class="article">
+
+<h2>👻 ارواح؛ علم چه می‌گوید؟</h2>
+
+<p>
+
+اعتقاد به وجود ارواح قدمتی هزاران ساله دارد و تقریباً در تمام فرهنگ‌های جهان داستان‌هایی درباره مشاهده ارواح یا ارتباط با دنیای مردگان وجود دارد.
+
+افرادی که ادعای مشاهده روح را دارند، معمولاً از دیدن سایه‌ها، شنیدن صداهای ناشناس یا احساس حضور فردی نامرئی صحبت می‌کنند.
+
+دانشمندان تاکنون هیچ مدرک قطعی که وجود ارواح را ثابت کند پیدا نکرده‌اند. بسیاری از پژوهشگران معتقدند عواملی مانند خطای مغز، خواب‌زدگی، استرس، میدان‌های مغناطیسی و حتی صداهای با فرکانس پایین می‌توانند باعث ایجاد چنین تجربه‌هایی شوند.
+
+با این وجود، موضوع ارواح همچنان یکی از پرطرفدارترین مباحث ماوراءالطبیعه در کتاب‌ها، فیلم‌ها و مستندهای جهان است.
+
+</p>
+
+</div>
+
+<div class="article">
+
+<h2>👽 آیا موجودات فرازمینی وجود دارند؟</h2>
+
+<p>
+
+جهان هستی بیش از صدها میلیارد کهکشان را در خود جای داده است و هر کهکشان نیز میلیاردها ستاره دارد. همین موضوع باعث شده بسیاری از دانشمندان احتمال دهند که حیات در نقاط دیگری از جهان نیز وجود داشته باشد.
+
+با وجود دهه‌ها تحقیق و جستجو، هنوز هیچ مدرک قطعی مبنی بر وجود موجودات هوشمند فرازمینی یا سفر آن‌ها به زمین پیدا نشده است.
+
+سازمان‌هایی مانند ناسا و پروژه SETI همچنان در حال بررسی سیگنال‌های احتمالی از فضا هستند تا شاید روزی نشانه‌ای از حیات فرازمینی پیدا شود.
+
+تا امروز، وجود موجودات فضایی نه تأیید شده و نه رد شده است و همچنان یکی از بزرگ‌ترین پرسش‌های علم به شمار می‌رود.
+
+</p>
+
+</div>
+
+<div class="article">
+
+<h2>🏛 آتلانتیس؛ شهر گمشده</h2>
+
+<p>
+
+داستان آتلانتیس نخستین بار توسط فیلسوف یونانی، افلاطون، بیش از دو هزار سال پیش نوشته شد. او از تمدنی پیشرفته سخن گفت که بر اثر یک فاجعه طبیعی در اعماق اقیانوس ناپدید شد.
+
+از آن زمان تاکنون افراد زیادی تلاش کرده‌اند مکان واقعی آتلانتیس را پیدا کنند. برخی آن را در اقیانوس اطلس، برخی در دریای مدیترانه و برخی حتی در قطب جنوب جستجو کرده‌اند.
+
+با وجود این تلاش‌ها، تاکنون هیچ مدرک باستان‌شناسی معتبری که وجود این شهر را ثابت کند یافت نشده است و بسیاری از پژوهشگران معتقدند که آتلانتیس بیشتر یک داستان فلسفی بوده است.
+
+با این حال، راز آتلانتیس همچنان یکی از مشهورترین معماهای تاریخ بشر محسوب می‌شود.
+
+</p>
+
+</div><div class="article">
+
+<h2>🔮 پیشگویی‌های نوستراداموس</h2>
+
+<p>
+
+میشل دو نوسترادام، که بیشتر با نام نوستراداموس شناخته می‌شود، پزشک و ستاره‌شناس فرانسوی قرن شانزدهم بود. او مجموعه‌ای از اشعار رمزآلود منتشر کرد که برخی افراد معتقدند رویدادهای مهم تاریخ را پیش‌بینی کرده‌اند.
+
+طرفداران او می‌گویند انقلاب فرانسه، جنگ‌های جهانی و حتی برخی حوادث معاصر در نوشته‌های او آمده است. اما بیشتر تاریخ‌دانان و پژوهشگران معتقدند که اشعار نوستراداموس بسیار کلی و مبهم هستند و می‌توان آن‌ها را به رویدادهای مختلف نسبت داد.
+
+به همین دلیل تاکنون هیچ مدرک علمی وجود ندارد که نشان دهد نوستراداموس توانایی پیش‌بینی آینده را داشته است.
+
+</p>
+
+</div>
+
+<div class="article">
+
+<h2>🚢 کشتی هلندی سرگردان</h2>
+
+<p>
+
+کشتی هلندی سرگردان یکی از مشهورترین افسانه‌های دریانوردی جهان است. طبق این روایت، ناخدای کشتی به دلیل غرور و نافرمانی، نفرین شد تا برای همیشه در اقیانوس‌ها سرگردان بماند و هرگز به ساحل نرسد.
+
+دریانوردان قدیمی معتقد بودند دیدن این کشتی نشانه وقوع طوفان یا بدشانسی است. امروزه بسیاری از پژوهشگران این داستان را نتیجه خطاهای دید انسان، پدیده‌های نوری روی دریا و روایت‌های دریانوردان می‌دانند.
+
+با این حال، افسانه کشتی هلندی سرگردان همچنان یکی از معروف‌ترین داستان‌های اسرارآمیز جهان است.
+
+</p>
+
+</div>
+
+<div class="article">
+
+<h2>🌲 جنگل آئوکیگاهارا</h2>
+
+<p>
+
+جنگل آئوکیگاهارا در دامنه کوه فوجی ژاپن قرار دارد و به دلیل سکوت عمیق و پوشش گیاهی بسیار متراکم شهرت زیادی پیدا کرده است. در فرهنگ عامه، داستان‌های فراوانی درباره این جنگل نقل می‌شود و برخی آن را مکانی رازآلود می‌دانند.
+
+پژوهشگران معتقدند بیشتر شهرت این جنگل به دلیل داستان‌ها، فیلم‌ها و رسانه‌ها به وجود آمده است و تاکنون هیچ شواهد علمی مبنی بر وجود نیروهای فراطبیعی در آن یافت نشده است.
+
+امروزه مسئولان ژاپن تلاش می‌کنند با افزایش آگاهی عمومی و ارائه خدمات حمایتی، از شکل‌گیری باورهای نادرست درباره این منطقه جلوگیری کنند.
+
+</p>
+
+</div>
+
+<div class="article">
+
+<h2>🌌 جمع‌بندی</h2>
+
+<p>
+
+ماوراءالطبیعه همواره یکی از جذاب‌ترین موضوعات برای انسان بوده است. از افسانه‌های باستانی گرفته تا داستان‌های مدرن، این روایت‌ها باعث شده‌اند مردم درباره ناشناخته‌های جهان کنجکاو شوند.
+
+در بسیاری از موارد، علم توانسته توضیح‌هایی برای پدیده‌های اسرارآمیز ارائه دهد، اما هنوز پرسش‌های بی‌پاسخ بسیاری درباره جهان و طبیعت باقی مانده است. به همین دلیل، بررسی این موضوعات با ذهنی باز، همراه با تکیه بر شواهد و پژوهش‌های علمی، بهترین راه برای شناخت واقعیت از افسانه است.
+
+</p>
+
+</div><style>
+
+/* افکت کارت‌ها */
+
+.article{
+
+transition:0.35s ease;
+
+}
+
+.article:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 0 35px rgba(140,90,255,.35);
+
+border-color:rgba(180,120,255,.5);
+
+}
+
+/* افکت کارت‌های بالای صفحه */
+
+.article div{
+
+transition:.35s;
+
+}
+
+.article div:hover{
+
+transform:scale(1.03);
+
+background:rgba(130,90,255,.15)!important;
+
+box-shadow:0 0 25px rgba(140,90,255,.3);
+
+}
+
+/* انتخاب متن */
+
+::selection{
+
+background:#7b4dff;
+
+color:white;
+
+}
+
+footer{
+
+margin-top:70px;
+
+text-align:center;
+
+padding:35px;
+
+font-size:18px;
+
+color:#bdbdbd;
+
+border-top:1px solid rgba(255,255,255,.1);
+
+}
+
+footer span{
+
+color:#d4c6ff;
+
+font-weight:bold;
+
+}
+
+</style>
+
+<footer>
+
+© 2026 <span>Teax AI</span>
+
+<br><br>
+
+تمامی مقالات این بخش با هدف آشنایی با موضوعات رازآلود جهان تهیه شده‌اند و میان روایت‌های تاریخی، باورهای مردمی و دیدگاه‌های علمی تفاوت قائل می‌شوند.
+
+</footer>
+
+<script>
+
+/* افکت ظاهر شدن مقالات */
+
+const articles=document.querySelectorAll(".article");
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.animate([
+
+{opacity:0,transform:"translateY(40px)"},
+
+{opacity:1,transform:"translateY(0px)"}
+
+],{
+
+duration:700,
+
+fill:"forwards"
+
+});
+
+}
+
+});
+
+});
+
+articles.forEach(article=>observer.observe(article));
+
+</script>
+
+</body>
+
+</html>
