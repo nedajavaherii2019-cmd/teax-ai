@@ -1,95 +1,825 @@
-<div class="article">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 
-<h2>🌊 اقیانوس‌های زمین</h2>
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Teax AI | Oceans</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:'Vazirmatn',sans-serif;
+
+background:#05050b;
+
+background-image:
+
+linear-gradient(rgba(5,5,12,.78),rgba(5,5,12,.90)),
+
+url("background.png");
+
+background-size:cover;
+
+background-position:center;
+
+background-attachment:fixed;
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+/* نورهای بنفش */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:900px;
+
+height:900px;
+
+top:-250px;
+
+right:-250px;
+
+background:radial-gradient(circle,
+
+rgba(115,70,255,.45),
+
+transparent 70%);
+
+filter:blur(25px);
+
+animation:float1 9s ease-in-out infinite;
+
+z-index:-1;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:700px;
+
+height:700px;
+
+bottom:-250px;
+
+left:-200px;
+
+background:radial-gradient(circle,
+
+rgba(70,30,200,.40),
+
+transparent 70%);
+
+filter:blur(25px);
+
+animation:float2 12s ease-in-out infinite;
+
+z-index:-1;
+
+}
+
+@keyframes float1{
+
+50%{
+
+transform:translateY(35px);
+
+}
+
+}
+
+@keyframes float2{
+
+50%{
+
+transform:translateY(-35px);
+
+}
+
+}
+
+/* لوگو */
+
+.logo{
+
+position:fixed;
+
+top:22px;
+
+right:25px;
+
+z-index:999;
+
+}
+
+.logo img{
+
+width:82px;
+
+height:82px;
+
+border-radius:18px;
+
+filter:drop-shadow(0 0 25px #8d62ff);
+
+}
+
+/* برگشت */
+
+.back{
+
+position:fixed;
+
+left:25px;
+
+top:25px;
+
+padding:14px 28px;
+
+background:rgba(255,255,255,.07);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(170,120,255,.35);
+
+border-radius:18px;
+
+color:white;
+
+text-decoration:none;
+
+transition:.35s;
+
+}
+
+.back:hover{
+
+background:#7b4eff44;
+
+box-shadow:0 0 30px #7b4eff88;
+
+transform:translateY(-3px);
+
+}
+
+.wrapper{
+
+max-width:1450px;
+
+margin:auto;
+
+padding:140px 30px 80px;
+
+}
+
+/* Hero */
+
+.hero{
+
+padding:55px;
+
+background:rgba(20,18,40,.42);
+
+backdrop-filter:blur(22px);
+
+border-radius:35px;
+
+border:1px solid rgba(170,120,255,.22);
+
+box-shadow:0 0 35px rgba(120,80,255,.18);
+
+margin-bottom:45px;
+
+}
+
+.hero h1{
+
+font-size:62px;
+
+background:linear-gradient(90deg,#fff,#ccb6ff);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+font-size:22px;
+
+line-height:2.2;
+
+color:#dddddd;
+
+max-width:900px;
+
+}
+
+.content{
+
+display:grid;
+
+grid-template-columns:290px 1fr;
+
+gap:30px;
+
+}
+
+.sidebar{
+
+position:sticky;
+
+top:120px;
+
+height:max-content;
+
+background:rgba(20,18,40,.45);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+padding:25px;
+
+border:1px solid rgba(170,120,255,.2);
+
+}
+
+.sidebar h3{
+
+font-size:28px;
+
+margin-bottom:20px;
+
+color:#d6c1ff;
+
+}
+
+.sidebar a{
+
+display:block;
+
+text-decoration:none;
+
+color:#f1f1f1;
+
+padding:13px;
+
+border-radius:14px;
+
+margin-bottom:10px;
+
+transition:.3s;
+
+}
+
+.sidebar a:hover{
+
+background:#7b4eff33;
+
+padding-right:22px;
+
+}
+
+.article{
+
+background:rgba(20,18,40,.42);
+
+backdrop-filter:blur(22px);
+
+border-radius:30px;
+
+overflow:hidden;
+
+margin-bottom:35px;
+
+border:1px solid rgba(170,120,255,.22);
+
+transition:.4s;
+
+box-shadow:0 0 30px rgba(120,70,255,.15);
+
+}
+
+.article:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 0 40px rgba(130,90,255,.35);
+
+}
+
+.banner{
+
+height:260px;
+
+overflow:hidden;
+
+}
+
+.banner img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:.6s;
+
+}
+
+.article:hover img{
+
+transform:scale(1.08);
+
+}
+
+.info{
+
+padding:35px;
+
+}
+
+.info h2{
+
+font-size:36px;
+
+margin-bottom:18px;
+
+}
+
+.info p{
+
+font-size:20px;
+
+line-height:2.3;
+
+color:#e5e5e5;
+
+}
+
+.tag{
+
+display:inline-block;
+
+background:#7b4eff33;
+
+padding:8px 15px;
+
+border-radius:25px;
+
+margin:6px;
+
+font-size:14px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="logo">
+
+<img src="logo.jpeg">
+
+</div>
+
+<a href="index.html" class="back">
+
+⬅ بازگشت
+
+</a>
+
+<div class="wrapper">
+
+<div class="hero">
+
+<h1>🌊 Oceans</h1>
 
 <p>
 
-بیش از <b>۷۱ درصد</b> سطح کره زمین را آب پوشانده است و بیشتر این آب‌ها در پنج اقیانوس بزرگ جهان قرار دارند: اقیانوس آرام، اطلس، هند، منجمد شمالی و منجمد جنوبی. اقیانوس‌ها نقش اساسی در تنظیم آب‌وهوا، تولید اکسیژن، جذب دی‌اکسیدکربن و حفظ حیات روی زمین دارند.
+اقیانوس‌ها بیش از ۷۱ درصد سطح زمین را پوشانده‌اند و یکی از اسرارآمیزترین بخش‌های سیاره ما هستند. از عمیق‌ترین گودال‌های جهان گرفته تا موجوداتی که هرگز نور خورشید را ندیده‌اند، این بخش شما را با شگفتی‌های دنیای زیر آب آشنا می‌کند.
 
 </p>
 
 </div>
 
-<div class="article">
+<div class="content">
 
-<h2>🌊 عمیق‌ترین نقطه اقیانوس</h2>
+<div class="sidebar">
+
+<h3>🌊 مقالات</h3>
+
+<a href="#oceans">اقیانوس‌ها</a>
+
+<a href="#deep">اعماق دریا</a>
+
+<a href="#animals">جانوران</a>
+
+<a href="#coral">مرجان‌ها</a>
+
+<a href="#explore">اکتشافات</a>
+
+<a href="#climate">اقلیم</a>
+
+</div>
+
+<div><!-- ================= مقاله ۱ ================= -->
+
+<section class="article" id="oceans">
+
+<div class="banner">
+
+<img src="ocean.jpg" alt="Ocean">
+
+</div>
+
+<div class="info">
+
+<span class="tag">🌍 زمین</span>
+
+<span class="tag">🌊 اقیانوس</span>
+
+<span class="tag">⏱ ۴ دقیقه مطالعه</span>
+
+<h2>اقیانوس‌های زمین</h2>
 
 <p>
 
-عمیق‌ترین بخش شناخته‌شده اقیانوس، <b>گودال چلنجر</b> در گودال ماریانا است که در غرب اقیانوس آرام قرار دارد. عمق این نقطه حدود <b>۱۰٬۹۰۰ متر</b> است؛ یعنی اگر قله اورست را داخل آن قرار دهیم، همچنان بیش از دو کیلومتر آب روی قله باقی خواهد ماند.
+بیش از <b>۷۱ درصد</b> سطح کره زمین را آب پوشانده است. دانشمندان اقیانوس‌های جهان را به پنج بخش اصلی تقسیم می‌کنند: اقیانوس آرام، اطلس، هند، منجمد شمالی و منجمد جنوبی. این اقیانوس‌ها نقش بسیار مهمی در تنظیم دمای زمین، تولید اکسیژن و چرخه آب دارند.
 
 </p>
 
 </div>
 
-<div class="article">
+</section>
 
-<h2>🔬 چه مقدار از اقیانوس‌ها کشف شده است؟</h2>
+<!-- ================= مقاله ۲ ================= -->
+
+<section class="article" id="deep">
+
+<div class="banner">
+
+<img src="deep.jpg" alt="Deep Ocean">
+
+</div>
+
+<div class="info">
+
+<span class="tag">🌑 اعماق</span>
+
+<span class="tag">📏 ۱۰۹۳۵ متر</span>
+
+<span class="tag">⏱ ۵ دقیقه مطالعه</span>
+
+<h2>عمیق‌ترین نقطه اقیانوس</h2>
 
 <p>
 
-با وجود پیشرفت فناوری، انسان هنوز بخش بسیار کوچکی از اقیانوس‌ها را با جزئیات بررسی کرده است. بر اساس پژوهش‌های علمی، تنها حدود <b>۲۵ درصد</b> از کف اقیانوس‌ها با نقشه‌های دقیق ثبت شده‌اند و بخش بزرگی از اعماق آن‌ها هنوز ناشناخته است. همچنین بخش زیادی از موجودات زنده اعماق دریا هنوز شناسایی نشده‌اند و هر سال گونه‌های جدیدی کشف می‌شوند.
+عمیق‌ترین بخش شناخته‌شده اقیانوس، <b>گودال چلنجر</b> در گودال ماریانا است که حدود <b>۱۰٬۹۳۵ متر</b> عمق دارد. فشار آب در این نقطه بیش از هزار برابر فشار جو در سطح زمین است و تنها تعداد کمی زیردریایی توانسته‌اند به آن برسند.
 
 </p>
 
 </div>
 
-<div class="article">
+</section>
 
-<h2>🐙 موجودات اعماق دریا</h2>
+<!-- ================= مقاله ۳ ================= -->
+
+<section class="article" id="animals">
+
+<div class="banner">
+
+<img src="creatures.jpg" alt="Sea Animals">
+
+</div>
+
+<div class="info">
+
+<span class="tag">🐙 جانوران</span>
+
+<span class="tag">💡 زیست‌تابی</span>
+
+<span class="tag">⏱ ۶ دقیقه مطالعه</span>
+
+<h2>موجودات اعماق دریا</h2>
 
 <p>
 
-در اعماق اقیانوس، نور خورشید تقریباً وجود ندارد و فشار آب صدها برابر بیشتر از سطح زمین است. با این حال، موجودات شگفت‌انگیزی مانند ماهی‌های شب‌تاب، اختاپوس‌های غول‌پیکر، کرم‌های لوله‌ای و عروس‌های دریایی در این محیط زندگی می‌کنند. بسیاری از این جانوران برای بقا، توانایی تولید نور طبیعی یا «زیست‌تابی» دارند.
+در اعماق اقیانوس، نور خورشید وجود ندارد؛ اما موجوداتی مانند ماهی فانوسی، اختاپوس غول‌پیکر و عروس‌های دریایی با تولید نور طبیعی یا <b>زیست‌تابی (Bioluminescence)</b> در تاریکی زندگی می‌کنند. بسیاری از این گونه‌ها هنوز به‌طور کامل مطالعه نشده‌اند.
 
 </p>
 
 </div>
 
-<div class="article">
+</section>
 
-<h2>🪸 صخره‌های مرجانی</h2>
+<!-- ================= مقاله ۴ ================= -->
+
+<section class="article" id="coral">
+
+<div class="banner">
+
+<img src="coral.jpg" alt="Coral Reef">
+
+</div>
+
+<div class="info">
+
+<span class="tag">🪸 مرجان</span>
+
+<span class="tag">🐠 تنوع زیستی</span>
+
+<span class="tag">⏱ ۴ دقیقه مطالعه</span>
+
+<h2>صخره‌های مرجانی</h2>
 
 <p>
 
-صخره‌های مرجانی از مهم‌ترین اکوسیستم‌های دریایی جهان هستند. این ساختارها توسط جانوران بسیار کوچکی به نام مرجان ساخته می‌شوند و زیستگاه هزاران گونه ماهی، سخت‌پوست و گیاه دریایی هستند. افزایش دمای آب، آلودگی و اسیدی شدن اقیانوس‌ها از بزرگ‌ترین تهدیدهای مرجان‌ها به شمار می‌روند.
+صخره‌های مرجانی کمتر از یک درصد بستر اقیانوس‌ها را تشکیل می‌دهند، اما محل زندگی حدود <b>۲۵ درصد</b> از گونه‌های دریایی هستند. افزایش دمای آب و آلودگی محیط زیست از مهم‌ترین تهدیدهای این اکوسیستم ارزشمند به شمار می‌روند.
 
 </p>
 
 </div>
 
-<div class="article">
+</section>
 
-<h2>🌡️ نقش اقیانوس‌ها در آب‌وهوا</h2>
+<!-- ================= مقاله ۵ ================= -->
+
+<section class="article" id="explore">
+
+<div class="banner">
+
+<img src="submarine.jpg" alt="Exploration">
+
+</div>
+
+<div class="info">
+
+<span class="tag">🚢 اکتشاف</span>
+
+<span class="tag">🤖 ربات</span>
+
+<span class="tag">⏱ ۵ دقیقه مطالعه</span>
+
+<h2>اکتشاف اعماق اقیانوس</h2>
 
 <p>
 
-اقیانوس‌ها مقدار زیادی از گرمای خورشید را جذب و ذخیره می‌کنند و به همین دلیل نقش مهمی در تنظیم دمای زمین دارند. جریان‌های بزرگ اقیانوسی، گرما را از مناطق گرمسیری به مناطق سرد منتقل می‌کنند و بر آب‌وهوا، بارندگی و حتی کشاورزی بسیاری از کشورها تأثیر می‌گذارند.
+امروزه دانشمندان با استفاده از زیردریایی‌های تحقیقاتی، ربات‌های خودکار و فناوری سونار در حال نقشه‌برداری از کف اقیانوس‌ها هستند. هنوز بخش بزرگی از اعماق دریا ناشناخته باقی مانده و هر سال گونه‌های جدیدی از موجودات دریایی کشف می‌شوند.
 
 </p>
 
 </div>
 
-<div class="article">
+</section>
 
-<h2>🚢 ناشناخته‌های زیر آب</h2>
+<!-- ================= مقاله ۶ ================= -->
+
+<section class="article" id="climate">
+
+<div class="banner">
+
+<img src="waves.jpg" alt="Climate">
+
+</div>
+
+<div class="info">
+
+<span class="tag">🌍 اقلیم</span>
+
+<span class="tag">🌡 آب‌وهوا</span>
+
+<span class="tag">⏱ ۴ دقیقه مطالعه</span>
+
+<h2>نقش اقیانوس‌ها در آب‌وهوا</h2>
 
 <p>
 
-در کف اقیانوس‌ها هزاران کوه، آتشفشان، دره و حتی کشتی‌های غرق‌شده وجود دارد که هنوز به طور کامل بررسی نشده‌اند. دانشمندان با استفاده از زیردریایی‌های تحقیقاتی، ربات‌های خودکار و فناوری سونار هر سال اطلاعات تازه‌ای از این دنیای پنهان به دست می‌آورند.
+اقیانوس‌ها بزرگ‌ترین مخزن گرمای زمین هستند. جریان‌های اقیانوسی گرما را در سراسر سیاره جابه‌جا می‌کنند و بر آب‌وهوا، بارندگی و حتی کشاورزی تأثیر مستقیم دارند. همچنین بخش بزرگی از اکسیژن مورد نیاز زمین توسط جلبک‌های میکروسکوپی اقیانوسی تولید می‌شود.
 
 </p>
 
 </div>
 
-<div class="article">
+</section></div>
 
-<h2>🌍 جمع‌بندی</h2>
+</div>
 
-<p>
+<!-- ================= آمار اقیانوس ================= -->
 
-اقیانوس‌ها بزرگ‌ترین زیستگاه زمین هستند و هنوز رازهای بی‌شماری را در دل خود پنهان کرده‌اند. آن‌ها نه‌تنها خانه میلیون‌ها گونه جاندار هستند، بلکه در تنظیم آب‌وهوا، تولید بخش بزرگی از اکسیژن زمین و حفظ چرخه حیات نقش اساسی دارند. هر کشف جدید در اعماق دریا نشان می‌دهد که هنوز چیزهای زیادی درباره این دنیای شگفت‌انگیز نمی‌دانیم.
+<section style="margin-top:60px;">
+
+<div style="display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;">
+
+<div class="article" style="padding:30px;text-align:center;">
+
+<h2 style="font-size:48px;">🌊</h2>
+
+<h3>۷۱٪</h3>
+
+<p>سطح زمین پوشیده از آب است.</p>
+
+</div>
+
+<div class="article" style="padding:30px;text-align:center;">
+
+<h2 style="font-size:48px;">📏</h2>
+
+<h3>۱۰٬۹۳۵ متر</h3>
+
+<p>بیشترین عمق ثبت‌شده اقیانوس‌ها.</p>
+
+</div>
+
+<div class="article" style="padding:30px;text-align:center;">
+
+<h2 style="font-size:48px;">🐋</h2>
+
+<h3>بیش از ۲۳۰ هزار</h3>
+
+<p>گونه دریایی تاکنون شناسایی شده‌اند.</p>
+
+</div>
+
+<div class="article" style="padding:30px;text-align:center;">
+
+<h2 style="font-size:48px;">🛰</h2>
+
+<h3>حدود ۲۵٪</h3>
+
+<p>از بستر اقیانوس‌ها با جزئیات بالا نقشه‌برداری شده است.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= فوتر ================= -->
+
+<footer style="margin-top:70px;">
+
+<div style="background:rgba(20,18,40,.45);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(170,120,255,.25);
+
+border-radius:30px;
+
+padding:40px;
+
+text-align:center;
+
+box-shadow:0 0 35px rgba(120,70,255,.15);">
+
+<h2 style="font-size:34px;
+margin-bottom:20px;
+background:linear-gradient(90deg,#fff,#cdb7ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;">
+
+🌊 Teax AI | Oceans
+
+</h2>
+
+<p style="font-size:19px;
+line-height:2.2;
+color:#d7d7d7;">
+
+اقیانوس‌ها هنوز یکی از ناشناخته‌ترین بخش‌های سیاره زمین هستند. این صفحه با هدف معرفی یافته‌های علمی، موجودات اعماق دریا، جریان‌های اقیانوسی و شگفتی‌های دنیای زیر آب طراحی شده است.
+
+</p>
+
+<div style="width:120px;
+height:2px;
+background:#8b5fff;
+margin:30px auto;
+box-shadow:0 0 20px #8b5fff;"></div>
+
+<p style="color:#aaa;">
+
+© 2026 Teax AI | Oceans
 
 </p>
 
 </div>
+
+</footer>
+
+</div>
+
+<a href="#top"
+
+style="position:fixed;
+left:25px;
+bottom:25px;
+width:58px;
+height:58px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:rgba(123,78,255,.25);
+backdrop-filter:blur(20px);
+border-radius:50%;
+border:1px solid rgba(170,120,255,.35);
+color:white;
+text-decoration:none;
+font-size:25px;
+box-shadow:0 0 30px rgba(123,78,255,.35);
+transition:.35s;">
+
+⬆
+
+</a>
+
+<script>
+
+const articles=document.querySelectorAll(".article");
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.animate(
+
+[
+{opacity:0,transform:"translateY(60px)"},
+{opacity:1,transform:"translateY(0px)"}
+],
+
+{
+
+duration:700,
+
+fill:"forwards"
+
+}
+
+);
+
+}
+
+});
+
+},
+
+{
+
+threshold:.15
+
+});
+
+articles.forEach(article=>{
+
+observer.observe(article);
+
+});
+
+</script>
+
+</body>
+
+</html>
