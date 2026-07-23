@@ -4,9 +4,16 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Teax AI | Nature</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -24,10 +31,14 @@ scroll-behavior:smooth;
 
 body{
 
-font-family:Tahoma,sans-serif;
+font-family:'Vazirmatn',sans-serif;
 
-background:
-linear-gradient(rgba(5,5,12,.86),rgba(5,5,12,.93)),
+background:#05050b;
+
+background-image:
+
+linear-gradient(rgba(5,5,12,.82),rgba(5,5,12,.90)),
+
 url("background.png");
 
 background-size:cover;
@@ -42,27 +53,33 @@ overflow-x:hidden;
 
 }
 
+/* نورهای بنفش */
+
 body::before{
 
 content:"";
 
 position:fixed;
 
-width:700px;
+width:900px;
 
-height:700px;
+height:900px;
+
+right:-300px;
 
 top:-250px;
 
-right:-180px;
-
 background:radial-gradient(circle,
-rgba(110,60,255,.40),
+
+rgba(123,78,255,.45),
+
 transparent 70%);
 
-pointer-events:none;
+filter:blur(20px);
 
 z-index:-1;
+
+animation:glow1 8s ease-in-out infinite;
 
 }
 
@@ -72,33 +89,59 @@ content:"";
 
 position:fixed;
 
-width:600px;
+width:700px;
 
-height:600px;
+height:700px;
 
-bottom:-220px;
+left:-250px;
 
-left:-150px;
+bottom:-250px;
 
 background:radial-gradient(circle,
-rgba(70,30,200,.35),
+
+rgba(75,25,210,.40),
+
 transparent 70%);
 
-pointer-events:none;
+filter:blur(20px);
 
 z-index:-1;
 
+animation:glow2 10s ease-in-out infinite;
+
 }
+
+@keyframes glow1{
+
+50%{
+
+transform:translateY(40px);
+
+}
+
+}
+
+@keyframes glow2{
+
+50%{
+
+transform:translateY(-40px);
+
+}
+
+}
+
+/* لوگو */
 
 .logo{
 
 position:fixed;
 
-top:20px;
+right:30px;
 
-right:25px;
+top:22px;
 
-z-index:1000;
+z-index:999;
 
 }
 
@@ -108,81 +151,97 @@ width:82px;
 
 height:82px;
 
-border-radius:18px;
+border-radius:20px;
 
-filter:drop-shadow(0 0 25px rgba(140,90,255,.6));
+filter:drop-shadow(0 0 25px #7d4dff);
 
 }
+
+/* دکمه برگشت */
 
 .back{
 
 position:fixed;
 
-top:25px;
-
 left:25px;
 
-background:rgba(255,255,255,.08);
+top:25px;
 
-backdrop-filter:blur(20px);
-
-padding:15px 28px;
-
-border-radius:18px;
+padding:14px 30px;
 
 text-decoration:none;
 
 color:white;
 
-border:1px solid rgba(180,120,255,.35);
+background:rgba(255,255,255,.07);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(170,120,255,.35);
+
+border-radius:18px;
 
 transition:.35s;
+
+box-shadow:0 0 25px rgba(100,70,255,.18);
 
 }
 
 .back:hover{
 
-background:rgba(130,90,255,.25);
+background:#7b4eff55;
 
-box-shadow:0 0 25px rgba(140,90,255,.35);
+transform:translateY(-3px);
+
+box-shadow:0 0 35px #7b4eff66;
 
 }
 
-.container{
+/* صفحه */
 
-max-width:1300px;
+.wrapper{
+
+max-width:1450px;
 
 margin:auto;
 
-padding:140px 35px 80px;
+padding:140px 30px 80px;
 
 }
 
+/* Hero */
+
 .hero{
 
-background:rgba(20,18,45,.42);
-
-backdrop-filter:blur(22px);
+padding:55px;
 
 border-radius:35px;
 
-padding:45px;
+background:rgba(20,18,40,.42);
+
+backdrop-filter:blur(22px);
 
 border:1px solid rgba(170,120,255,.25);
 
-box-shadow:0 0 35px rgba(120,70,255,.15);
+box-shadow:
 
-margin-bottom:35px;
+0 0 40px rgba(120,80,255,.15),
+
+inset 0 1px 0 rgba(255,255,255,.06);
+
+margin-bottom:45px;
+
+animation:fade 1.3s;
 
 }
 
 .hero h1{
 
-font-size:58px;
+font-size:64px;
 
 margin-bottom:20px;
 
-background:linear-gradient(90deg,#fff,#cdb8ff);
+background:linear-gradient(90deg,#fff,#cbaeff);
 
 -webkit-background-clip:text;
 
@@ -192,57 +251,201 @@ background:linear-gradient(90deg,#fff,#cdb8ff);
 
 .hero p{
 
-font-size:22px;
+font-size:23px;
 
-line-height:2.2;
+line-height:2.3;
 
-color:#dddddd;
+color:#d9d9d9;
+
+max-width:950px;
 
 }
+
+/* چیدمان */
+
+.content{
+
+display:grid;
+
+grid-template-columns:300px 1fr;
+
+gap:30px;
+
+}
+
+/* منوی کناری */
+
+.sidebar{
+
+position:sticky;
+
+top:120px;
+
+height:max-content;
+
+background:rgba(18,18,35,.45);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+padding:25px;
+
+border:1px solid rgba(170,120,255,.2);
+
+box-shadow:0 0 30px rgba(110,70,255,.15);
+
+}
+
+.sidebar h3{
+
+margin-bottom:18px;
+
+font-size:26px;
+
+color:#d6c1ff;
+
+}
+
+.sidebar a{
+
+display:block;
+
+padding:14px;
+
+margin-bottom:10px;
+
+text-decoration:none;
+
+color:#eee;
+
+border-radius:14px;
+
+transition:.3s;
+
+}
+
+.sidebar a:hover{
+
+background:#7b4eff33;
+
+padding-right:22px;
+
+}
+
+/* مقالات */
 
 .article{
 
 background:rgba(20,18,40,.42);
 
-backdrop-filter:blur(20px);
+backdrop-filter:blur(22px);
 
-border-radius:28px;
+border-radius:30px;
 
-padding:35px;
+overflow:hidden;
 
-margin-bottom:28px;
+margin-bottom:35px;
 
-border:1px solid rgba(180,120,255,.22);
+border:1px solid rgba(170,120,255,.22);
 
-transition:.35s;
+box-shadow:0 0 30px rgba(120,70,255,.12);
 
-box-shadow:0 0 25px rgba(120,70,255,.12);
+transition:.4s;
 
 }
 
 .article:hover{
 
-transform:translateY(-6px);
+transform:translateY(-8px);
 
-box-shadow:0 0 35px rgba(140,90,255,.35);
+box-shadow:0 0 40px rgba(130,90,255,.35);
 
 }
 
-.article h2{
+.banner{
 
-font-size:34px;
+height:260px;
+
+overflow:hidden;
+
+}
+
+.banner img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:.6s;
+
+}
+
+.article:hover img{
+
+transform:scale(1.08);
+
+}
+
+.info{
+
+padding:35px;
+
+}
+
+.info h2{
+
+font-size:36px;
 
 margin-bottom:18px;
 
 }
 
-.article p{
+.info p{
 
-font-size:21px;
+font-size:20px;
 
 line-height:2.3;
 
-color:#e7e7e7;
+color:#e4e4e4;
+
+}
+
+.tag{
+
+display:inline-block;
+
+padding:8px 16px;
+
+border-radius:30px;
+
+background:#7b4eff33;
+
+margin:8px 6px;
+
+font-size:14px;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
 
 }
 
@@ -264,189 +467,239 @@ color:#e7e7e7;
 
 </a>
 
-<div class="container">
+<div class="wrapper">
 
 <div class="hero">
 
-<h1>🌿 طبیعت</h1>
+<h1>🌿 Nature</h1>
 
 <p>
 
-طبیعت مجموعه‌ای شگفت‌انگیز از جنگل‌ها، کوهستان‌ها، رودخانه‌ها، گیاهان و جانوران است که طی میلیون‌ها سال شکل گرفته‌اند. در این بخش با زیباترین و عجیب‌ترین پدیده‌های طبیعی زمین آشنا خواهید شد و مطالب بر پایه منابع علمی و معتبر ارائه شده‌اند.
-
-</p>
-
-</div><!-- ===== مقالات طبیعت ===== -->
-
-<div class="article">
-
-<h2>🌳 جنگل‌های بارانی</h2>
-
-<p>
-
-جنگل‌های بارانی از ارزشمندترین اکوسیستم‌های زمین هستند و کمتر از ۷ درصد سطح خشکی‌های زمین را پوشش می‌دهند، اما بیش از نیمی از گونه‌های گیاهی و جانوری جهان در آن‌ها زندگی می‌کنند. این جنگل‌ها با جذب دی‌اکسید کربن و تولید اکسیژن، نقش مهمی در تنظیم آب‌وهوای زمین دارند.
+طبیعت مجموعه‌ای از شگفتی‌های بی‌پایان است؛ از جنگل‌های انبوه و آبشارهای عظیم گرفته تا گیاهان، جانوران و اکوسیستم‌هایی که میلیون‌ها سال برای شکل‌گیری آن‌ها زمان صرف شده است.
 
 </p>
 
 </div>
 
-<div class="article">
+<div class="content">
 
-<h2>🌲 قدیمی‌ترین درختان جهان</h2>
+<div class="sidebar">
+
+<h3>📚 مقالات</h3>
+
+<a href="#forest">🌳 جنگل‌ها</a>
+
+<a href="#flowers">🌺 گیاهان</a>
+
+<a href="#birds">🦅 پرندگان</a>
+
+<a href="#animals">🦊 جانوران</a>
+
+<a href="#waterfalls">🏞 آبشارها</a>
+
+<a href="#climate">🌍 آب‌وهوا</a>
+
+</div>
+
+<div><!-- Article 1 -->
+
+<section class="article" id="forest">
+
+<div class="banner">
+
+<img src="forest.jpg" alt="جنگل">
+
+</div>
+
+<div class="info">
+
+<span class="tag">🌳 جنگل</span>
+
+<span class="tag">🌎 اکوسیستم</span>
+
+<span class="tag">⏱ ۴ دقیقه مطالعه</span>
+
+<h2>جنگل‌های زمین</h2>
 
 <p>
 
-برخی درختان هزاران سال عمر می‌کنند. درختان کاج بریستلکون در آمریکای شمالی از قدیمی‌ترین موجودات زنده زمین هستند و سن بعضی از آن‌ها به بیش از <b>۴۸۰۰ سال</b> می‌رسد. این درختان اطلاعات ارزشمندی درباره تغییرات اقلیمی گذشته در اختیار دانشمندان قرار می‌دهند.
+جنگل‌ها نزدیک به <b>۳۱ درصد</b> از خشکی‌های زمین را پوشش می‌دهند و خانه میلیون‌ها گونه گیاهی و جانوری هستند. این اکوسیستم‌ها مقدار زیادی دی‌اکسیدکربن را جذب کرده و اکسیژن تولید می‌کنند، به همین دلیل از مهم‌ترین عوامل حفظ تعادل آب‌وهوای زمین محسوب می‌شوند.
 
 </p>
 
 </div>
 
-<div class="article">
+</section>
 
-<h2>🦋 گرده‌افشانی</h2>
+<!-- Article 2 -->
+
+<section class="article" id="flowers">
+
+<div class="banner">
+
+<img src="flowers.jpg" alt="گیاهان">
+
+</div>
+
+<div class="info">
+
+<span class="tag">🌺 گیاهان</span>
+
+<span class="tag">🌿 زیست‌شناسی</span>
+
+<span class="tag">⏱ ۳ دقیقه مطالعه</span>
+
+<h2>گیاهان و نقش آن‌ها</h2>
 
 <p>
 
-زنبورها، پروانه‌ها، پرندگان و حتی باد، گرده گیاهان را جابه‌جا می‌کنند. حدود <b>۷۵ درصد</b> محصولات غذایی مهم جهان به گرده‌افشانی جانوران وابسته هستند. بدون این فرآیند، تولید بسیاری از میوه‌ها و سبزیجات به شدت کاهش می‌یابد.
+تاکنون بیش از <b>۳۹۰ هزار گونه گیاهی</b> در جهان شناسایی شده است. گیاهان علاوه بر تولید اکسیژن، پایه اصلی زنجیره غذایی بسیاری از موجودات زنده هستند و نقش مهمی در جلوگیری از فرسایش خاک، تنظیم چرخه آب و کاهش آلودگی هوا دارند.
 
 </p>
 
 </div>
 
-<div class="article">
+</section>
 
-<h2>🐘 تنوع زیستی</h2>
+<!-- Article 3 -->
+
+<section class="article" id="birds">
+
+<div class="banner">
+
+<img src="birds.jpg" alt="پرندگان">
+
+</div>
+
+<div class="info">
+
+<span class="tag">🦅 پرندگان</span>
+
+<span class="tag">✈ مهاجرت</span>
+
+<span class="tag">⏱ ۴ دقیقه مطالعه</span>
+
+<h2>پرندگان مهاجر</h2>
 
 <p>
 
-تنوع زیستی به مجموعه تمام گونه‌های گیاهی، جانوری، قارچ‌ها و میکروارگانیسم‌ها گفته می‌شود. هرچه تنوع زیستی بیشتر باشد، اکوسیستم در برابر بیماری‌ها، تغییرات اقلیمی و بلایای طبیعی مقاوم‌تر خواهد بود.
+هر سال میلیون‌ها پرنده هزاران کیلومتر را برای یافتن غذا یا تولیدمثل طی می‌کنند. برخی گونه‌ها مانند پرستوی دریایی قطب شمال، طولانی‌ترین مهاجرت جهان را انجام می‌دهند و سالانه بیش از <b>۷۰ هزار کیلومتر</b> پرواز می‌کنند.
 
 </p>
 
 </div>
 
-<div class="article">
+</section>
 
-<h2>🌿 گیاهان دارویی</h2>
+<!-- Article 4 -->
+
+<section class="article" id="animals">
+
+<div class="banner">
+
+<img src="animals.jpg" alt="حیوانات">
+
+</div>
+
+<div class="info">
+
+<span class="tag">🦊 جانوران</span>
+
+<span class="tag">🌍 تنوع زیستی</span>
+
+<span class="tag">⏱ ۵ دقیقه مطالعه</span>
+
+<h2>تنوع زیستی</h2>
 
 <p>
 
-از هزاران سال پیش انسان از گیاهان برای درمان بیماری‌ها استفاده کرده است. امروزه نیز بسیاری از داروهای مدرن از ترکیبات طبیعی گیاهانی مانند بید، بابونه، نعناع، آویشن و آلوئه‌ورا تولید می‌شوند.
+دانشمندان تاکنون حدود <b>۲ میلیون گونه</b> از موجودات زنده را شناسایی کرده‌اند، اما تخمین زده می‌شود تعداد واقعی گونه‌ها بین ۸ تا ۱۰ میلیون باشد. بخش بزرگی از این گونه‌ها هنوز در جنگل‌های استوایی و اعماق اقیانوس‌ها ناشناخته مانده‌اند.
 
 </p>
 
 </div>
 
-<div class="article">
+</section>
 
-<h2>🦅 پرندگان مهاجر</h2>
+<!-- Article 5 -->
+
+<section class="article" id="waterfalls">
+
+<div class="banner">
+
+<img src="waterfall.jpg" alt="آبشار">
+
+</div>
+
+<div class="info">
+
+<span class="tag">🏞 آبشار</span>
+
+<span class="tag">💧 آب‌های شیرین</span>
+
+<span class="tag">⏱ ۳ دقیقه مطالعه</span>
+
+<h2>آبشارهای شگفت‌انگیز</h2>
 
 <p>
 
-هر سال میلیون‌ها پرنده برای یافتن غذا یا تولیدمثل هزاران کیلومتر مهاجرت می‌کنند. برخی گونه‌ها مانند پرستوی دریایی قطب شمال، طولانی‌ترین مهاجرت جهان را انجام می‌دهند و سالانه بیش از <b>۷۰ هزار کیلومتر</b> پرواز می‌کنند.
+آبشارها در اثر اختلاف ارتفاع و فرسایش سنگ‌ها شکل می‌گیرند. آبشار آنجل در ونزوئلا با ارتفاع حدود <b>۹۷۹ متر</b> بلندترین آبشار جهان است و یکی از شگفت‌انگیزترین پدیده‌های طبیعی سیاره زمین به شمار می‌رود.
 
 </p>
 
 </div>
 
-<div class="article">
+</section>
 
-<h2>🍄 قارچ‌ها</h2>
+<!-- Article 6 -->
+
+<section class="article" id="climate">
+
+<div class="banner">
+
+<img src="climate.jpg" alt="آب و هوا">
+
+</div>
+
+<div class="info">
+
+<span class="tag">🌍 اقلیم</span>
+
+<span class="tag">🌦 آب‌وهوا</span>
+
+<span class="tag">⏱ ۴ دقیقه مطالعه</span>
+
+<h2>تغییرات اقلیمی</h2>
 
 <p>
 
-قارچ‌ها نه گیاه هستند و نه جانور. آن‌ها گروه مستقلی از موجودات زنده را تشکیل می‌دهند و نقش بسیار مهمی در تجزیه بقایای گیاهان و جانوران دارند. بدون قارچ‌ها، چرخه طبیعی بازیافت مواد در طبیعت مختل می‌شد.
+افزایش گازهای گلخانه‌ای باعث گرم‌تر شدن زمین شده است. این تغییرات موجب ذوب یخ‌های قطبی، افزایش سطح آب دریاها، خشکسالی و تغییر زیستگاه بسیاری از گونه‌های جانوری شده و حفاظت از طبیعت را بیش از هر زمان دیگری ضروری کرده است.
 
 </p>
 
 </div>
 
-<div class="article">
-
-<h2>🏞 آبشارها</h2>
-
-<p>
-
-آبشارها در اثر اختلاف ارتفاع زمین و فرسایش سنگ‌ها شکل می‌گیرند. آبشار آنجل در ونزوئلا با ارتفاع حدود <b>۹۷۹ متر</b> بلندترین آبشار جهان است و یکی از شگفت‌انگیزترین جلوه‌های طبیعت به شمار می‌رود.
-
-</p>
-
-</div><div class="article">
-
-<h2>🌍 طبیعت و تغییرات اقلیمی</h2>
-
-<p>
-
-آب‌وهوای زمین همواره در حال تغییر بوده است، اما در دو قرن اخیر فعالیت‌های انسانی باعث افزایش گازهای گلخانه‌ای و گرم‌تر شدن سیاره شده است. این تغییرات می‌توانند موجب ذوب شدن یخ‌های قطبی، افزایش سطح آب دریاها، خشکسالی، آتش‌سوزی جنگل‌ها و تغییر زیستگاه بسیاری از گونه‌های جانوری شوند. حفاظت از طبیعت و استفاده صحیح از منابع طبیعی نقش مهمی در کاهش این اثرات دارد.
-
-</p>
+</section></div>
 
 </div>
 
-<div class="article">
+<footer class="footer">
 
-<h2>🌺 گل‌ها و گیاهان</h2>
+<div class="footer-card">
 
-<p>
-
-بیش از <b>۳۹۰ هزار گونه گیاهی</b> تاکنون در جهان شناسایی شده است. گیاهان علاوه بر تولید اکسیژن، غذای بسیاری از موجودات زنده را تأمین می‌کنند و در حفظ خاک، تنظیم چرخه آب و پاکسازی هوا نقش اساسی دارند.
-
-</p>
-
-</div>
-
-<div class="article">
-
-<h2>🦊 جانوران در خطر انقراض</h2>
+<h2>🌿 Teax AI</h2>
 
 <p>
 
-تخریب زیستگاه‌ها، شکار غیرقانونی، آلودگی و تغییرات اقلیمی باعث شده‌اند بسیاری از گونه‌های جانوری در معرض خطر انقراض قرار بگیرند. حفاظت از پارک‌های ملی، جنگل‌ها و دریاها یکی از مهم‌ترین راه‌های حفظ تنوع زیستی زمین است.
+طبیعت، بزرگ‌ترین شاهکار جهان است. این بخش با هدف معرفی شگفتی‌های طبیعت، اکوسیستم‌ها، گونه‌های گیاهی و جانوری، پدیده‌های طبیعی و آخرین یافته‌های علمی طراحی شده است.
 
 </p>
 
-</div>
+<div class="footer-line"></div>
 
-<div class="article">
+<p class="copy">
 
-<h2>🌎 جمع‌بندی</h2>
-
-<p>
-
-طبیعت حاصل میلیاردها سال تحول و تکامل است. هر جنگل، رودخانه، کوه، دشت و هر موجود زنده بخشی از چرخه پیچیده حیات را تشکیل می‌دهد. شناخت طبیعت به ما کمک می‌کند ارزش آن را بهتر درک کنیم و با حفاظت از آن، آینده سالم‌تری برای نسل‌های بعدی بسازیم.
-
-</p>
-
-</div>
-
-<footer style="margin-top:60px;">
-
-<div style="background:rgba(20,18,40,.45);
-backdrop-filter:blur(22px);
-border:1px solid rgba(180,120,255,.25);
-border-radius:30px;
-padding:35px;
-text-align:center;
-box-shadow:0 0 35px rgba(130,80,255,.18);">
-
-<h2 style="color:#d7c3ff;margin-bottom:15px;">
-
-🌿 Teax AI | Nature
-
-</h2>
-
-<p style="font-size:18px;line-height:2;color:#d8d8d8;">
-
-تمامی مطالب این بخش بر پایه منابع معتبر علوم محیط‌زیست، زیست‌شناسی، بوم‌شناسی و پژوهش‌های علمی تهیه شده‌اند و با هدف آشنایی بیشتر با شگفتی‌های طبیعت در اختیار کاربران قرار گرفته‌اند.
-
-</p>
-
-<br>
-
-<p style="color:#9d8ec7;">
-
-© 2026 Teax AI - All Rights Reserved
+© 2026 Teax AI | Nature
 
 </p>
 
@@ -454,21 +707,201 @@ box-shadow:0 0 35px rgba(130,80,255,.18);">
 
 </footer>
 
-</div>
+<a href="#" class="top-btn">
+
+⬆
+
+</a>
+
+<style>
+
+.footer{
+
+margin-top:70px;
+
+}
+
+.footer-card{
+
+background:rgba(20,18,40,.45);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(170,120,255,.25);
+
+border-radius:30px;
+
+padding:40px;
+
+text-align:center;
+
+box-shadow:0 0 35px rgba(120,70,255,.15);
+
+}
+
+.footer-card h2{
+
+font-size:34px;
+
+margin-bottom:20px;
+
+background:linear-gradient(90deg,#fff,#cbaeff);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.footer-card p{
+
+font-size:19px;
+
+line-height:2.2;
+
+color:#d7d7d7;
+
+}
+
+.footer-line{
+
+width:120px;
+
+height:2px;
+
+background:#8a5dff;
+
+margin:30px auto;
+
+box-shadow:0 0 20px #8a5dff;
+
+}
+
+.copy{
+
+color:#a89bcf;
+
+font-size:16px;
+
+}
+
+.top-btn{
+
+position:fixed;
+
+left:25px;
+
+bottom:25px;
+
+width:55px;
+
+height:55px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:rgba(123,78,255,.22);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(180,120,255,.4);
+
+border-radius:50%;
+
+color:white;
+
+text-decoration:none;
+
+font-size:24px;
+
+transition:.35s;
+
+box-shadow:0 0 25px rgba(123,78,255,.3);
+
+}
+
+.top-btn:hover{
+
+transform:translateY(-5px);
+
+background:#7b4eff66;
+
+box-shadow:0 0 35px #7b4eff99;
+
+}
+
+@media(max-width:950px){
+
+.content{
+
+grid-template-columns:1fr;
+
+}
+
+.sidebar{
+
+position:relative;
+
+top:0;
+
+margin-bottom:30px;
+
+}
+
+.hero h1{
+
+font-size:46px;
+
+}
+
+.hero{
+
+padding:35px;
+
+}
+
+.info h2{
+
+font-size:30px;
+
+}
+
+.info p{
+
+font-size:18px;
+
+}
+
+}
+
+</style>
 
 <script>
 
-const cards=document.querySelectorAll(".article");
+const articles=document.querySelectorAll(".article");
 
-const observer=new IntersectionObserver((entries)=>{
+const observer=new IntersectionObserver(entries=>{
 
 entries.forEach(entry=>{
 
 if(entry.isIntersecting){
 
-entry.target.style.opacity="1";
+entry.target.animate([
 
-entry.target.style.transform="translateY(0px)";
+{opacity:0,transform:"translateY(60px)"},
+
+{opacity:1,transform:"translateY(0)"}
+
+],{
+
+duration:700,
+
+fill:"forwards"
+
+});
 
 }
 
@@ -476,19 +909,10 @@ entry.target.style.transform="translateY(0px)";
 
 },{threshold:.15});
 
-cards.forEach(card=>{
-
-card.style.opacity="0";
-
-card.style.transform="translateY(40px)";
-
-card.style.transition=".8s ease";
-
-observer.observe(card);
-
-});
+articles.forEach(a=>observer.observe(a));
 
 </script>
 
 </body>
+
 </html>
