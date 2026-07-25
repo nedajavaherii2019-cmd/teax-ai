@@ -166,7 +166,57 @@ body.light .logo img{
     background:#1a1040;
     color:white;
     cursor:pointer;
-}</style>
+}</style>/* ===== پروفایل ===== */
+
+.profile-btn{
+    position:fixed;
+    top:25px;
+    left:160px;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:#222;
+    color:white;
+    font-size:24px;
+    cursor:pointer;
+    transition:.3s;
+    z-index:999;
+}
+
+.profile-btn:hover{
+    transform:scale(1.1);
+}
+
+.profile-box{
+    position:fixed;
+    top:90px;
+    left:25px;
+    width:240px;
+    background:#1b1b2f;
+    border:1px solid #555;
+    border-radius:15px;
+    padding:15px;
+    display:none;
+    color:white;
+    z-index:999;
+    box-shadow:0 0 15px rgba(0,0,0,.4);
+}
+
+.profile-box button{
+    width:100%;
+    margin-top:10px;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:#2d2d55;
+    color:white;
+}
+
+.profile-box button:hover{
+    background:#45457a;
+}
 
 </head>
 
@@ -178,7 +228,23 @@ body.light .logo img{
 
 <button id="theme-btn" class="theme-btn">☀️</button>
 
-<select id="language" class="language-select">
+    <button id="profile-btn" class="profile-btn">👤</button>
+
+<div class="profile-box" id="profile-box">
+
+<h3 id="profile-name">کاربر</h3>
+
+<button id="change-name">
+✏️ تغییر نام
+</button>
+
+<button id="logout">
+🚪 خروج
+</button>
+
+</div>
+
+    <select id="language" class="language-select">
     <option value="fa">🇮🇷 فارسی</option>
     <option value="en">🇺🇸 English</option>
 </select>
@@ -315,7 +381,75 @@ language.dispatchEvent(new Event("change"));
 
 }
 
-</script>
+// =========================
+// پروفایل
+// =========================
+
+const profileBtn=document.getElementById("profile-btn");
+const profileBox=document.getElementById("profile-box");
+const profileName=document.getElementById("profile-name");
+
+profileBtn.onclick=function(){
+
+    if(profileBox.style.display==="block"){
+
+        profileBox.style.display="none";
+
+    }else{
+
+        profileBox.style.display="block";
+
+    }
+
+};
+
+// اولین ورود
+
+let username=localStorage.getItem("username");
+
+if(!username){
+
+    username=prompt("نام کاربری خود را وارد کنید:");
+
+    if(username==="" || username==null){
+
+        username="کاربر";
+
+    }
+
+    localStorage.setItem("username",username);
+
+}
+
+profileName.innerHTML="👤 "+username;
+
+
+// تغییر نام
+
+document.getElementById("change-name").onclick=function(){
+
+    let newName=prompt("نام جدید را وارد کنید:");
+
+    if(newName && newName.trim()!==""){
+
+        localStorage.setItem("username",newName);
+
+        profileName.innerHTML="👤 "+newName;
+
+    }
+
+};
+
+
+// خروج
+
+document.getElementById("logout").onclick=function(){
+
+    localStorage.removeItem("username");
+
+    location.reload();
+
+};</script>
 
 </body>
 </html>
