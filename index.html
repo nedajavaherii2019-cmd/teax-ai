@@ -23,36 +23,46 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    transition:0.4s;
+    transition:.4s;
 }
 
-/* حالت روشن */
+/* ===== حالت روشن ===== */
+
 body.light{
-    background:#f5f5f5;
-    background-image:none;
+    background:#ffffff;
+    background-image:none !important;
+    color:#111;
+}
+
+body.light *{
     color:#111;
 }
 
 body.light .main-title{
-    background:none;
-    -webkit-text-fill-color:black;
-    color:black;
+    background:none !important;
+    -webkit-text-fill-color:#111 !important;
+    color:#111 !important;
 }
 
 body.light .message-box{
-    background:white;
-    color:#222;
+    background:#ffffff !important;
+    color:#111 !important;
     border:1px solid #ddd;
+    box-shadow:none;
 }
 
 body.light .btn{
-    background:white;
-    color:#111;
+    background:#ffffff !important;
+    color:#111 !important;
     border:1px solid #bbb;
 }
 
 body.light .btn:hover{
-    background:#ececec;
+    background:#ececec !important;
+}
+
+body.light .logo img{
+    filter:none;
 }
 
 .container{
@@ -126,7 +136,6 @@ body.light .btn:hover{
     transform:translateY(-2px);
 }
 
-/* دکمه تغییر حالت */
 .theme-btn{
     position:fixed;
     top:25px;
@@ -139,15 +148,25 @@ body.light .btn:hover{
     color:white;
     font-size:24px;
     cursor:pointer;
-    transition:0.3s;
-    box-shadow:0 0 15px rgba(0,0,0,.3);
+    transition:.3s;
     z-index:999;
 }
 
 .theme-btn:hover{
     transform:scale(1.1);
 }
-</style>
+
+.language-select{
+    position:fixed;
+    top:25px;
+    left:95px;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    background:#1a1040;
+    color:white;
+    cursor:pointer;
+}</style>
 
 </head>
 
@@ -158,6 +177,11 @@ body.light .btn:hover{
 </div>
 
 <button id="theme-btn" class="theme-btn">☀️</button>
+
+<select id="language" class="language-select">
+    <option value="fa">🇮🇷 فارسی</option>
+    <option value="en">🇺🇸 English</option>
+</select>
 
 <div class="container">
 
@@ -188,40 +212,108 @@ body.light .btn:hover{
 <script>
 
 // کلید Space
-document.addEventListener('keydown', function(e) {
+document.addEventListener("keydown",function(e){
 
-    if (e.code === 'Space' || e.key === ' ') {
-
+    if(e.code==="Space" || e.key===" "){
         e.preventDefault();
-
-        window.location.href = 'space/';
-
+        window.location.href="space/";
     }
 
 });
 
-// تغییر حالت روشن و تیره + ذخیره
-const btn = document.getElementById("theme-btn");
+// حالت روشن / تیره
 
-// اگر قبلاً حالت روشن انتخاب شده باشد
-if(localStorage.getItem("theme") === "light"){
+const themeBtn=document.getElementById("theme-btn");
+
+if(localStorage.getItem("theme")==="light"){
+
     document.body.classList.add("light");
-    btn.innerHTML = "🌙";
+    themeBtn.innerHTML="🌙";
+
+}else{
+
+    themeBtn.innerHTML="☀️";
+
 }
 
-btn.onclick = function(){
+themeBtn.onclick=function(){
 
     document.body.classList.toggle("light");
 
     if(document.body.classList.contains("light")){
-        btn.innerHTML="🌙";
+
+        themeBtn.innerHTML="🌙";
         localStorage.setItem("theme","light");
+
     }else{
-        btn.innerHTML="☀️";
+
+        themeBtn.innerHTML="☀️";
         localStorage.setItem("theme","dark");
+
     }
 
 };
+
+
+// تغییر زبان
+
+const language=document.getElementById("language");
+
+language.onchange=function(){
+
+if(this.value==="en"){
+
+document.documentElement.lang="en";
+document.documentElement.dir="ltr";
+
+document.querySelector(".main-title").textContent="Welcome to a New World";
+
+document.querySelector(".message-box").textContent="Welcome to Teax AI";
+
+const btns=document.querySelectorAll(".btn");
+
+btns[0].textContent="🚀 Space";
+btns[1].textContent="🌍 Geology";
+btns[2].textContent="🌿 Nature";
+btns[3].textContent="🌊 Oceans";
+btns[4].textContent="🔮 Supernatural";
+
+localStorage.setItem("language","en");
+
+}else{
+
+document.documentElement.lang="fa";
+document.documentElement.dir="rtl";
+
+document.querySelector(".main-title").textContent="به جهانی جدید خوش آمدید";
+
+document.querySelector(".message-box").textContent="به دنیای Teax AI خوش آمدید";
+
+const btns=document.querySelectorAll(".btn");
+
+btns[0].textContent="🚀 فضا";
+btns[1].textContent="🌏 زمین‌شناسی";
+btns[2].textContent="🌿 طبیعت";
+btns[3].textContent="🌊 دریاها";
+btns[4].textContent="🔮 ماوراءالطبیعه";
+
+localStorage.setItem("language","fa");
+
+}
+
+};
+
+
+// بارگذاری زبان ذخیره شده
+
+const savedLanguage=localStorage.getItem("language");
+
+if(savedLanguage){
+
+language.value=savedLanguage;
+language.dispatchEvent(new Event("change"));
+
+}
 
 </script>
 
